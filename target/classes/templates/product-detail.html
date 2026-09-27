@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${product != null ? product.name + ' - Chi tiết sản phẩm' : 'Sản phẩm không tìm thấy'}">Chi tiết sản phẩm - SaleAppV1</title>
+    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a th:href="@{/}" class="brand-logo">
+                <div class="brand-icon">S</div>
+                <span>SaleApp</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a th:href="@{/}" class="nav-link">Trang chủ</a></li>
+                    <li><a th:href="@{/products}" class="nav-link">Tất cả sản phẩm</a></li>
+                    <li><a th:href="@{/products(categoryId=1)}" class="nav-link">Điện thoại di động</a></li>
+                    <li><a th:href="@{/products(categoryId=2)}" class="nav-link">Máy tính bảng</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="breadcrumb">
+                <a th:href="@{/}">Trang chủ</a>
+                <span class="breadcrumb-separator">/</span>
+                <a th:href="@{/products}">Sản phẩm</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current" th:text="${product != null ? product.name : 'Không tìm thấy'}">Tên sản phẩm</span>
+            </nav>
+
+            <!-- Case 1: Product Exists -->
+            <article class="detail-card" th:if="${product != null}">
+                <div class="detail-layout">
+                    
+                    <!-- Left: Product Image Gallery -->
+                    <div class="detail-gallery">
+                        <div class="detail-image-box">
+                            <img th:src="${product.image}" 
+                                 th:alt="${product.name}" 
+                                 class="detail-image"
+                                 onerror="this.src='https://placehold.co/600x600/e2e8f0/1e293b?text=SaleApp'">
+                        </div>
+                    </div>
+
+                    <!-- Right: Product Information & Specs -->
+                    <div class="detail-info">
+                        
+                        <!-- Category Badge -->
+                        <span class="detail-category-badge" 
+                              th:text="${category != null ? category.name : 'Công nghệ'}">
+                            Danh mục
+                        </span>
+
+                        <!-- Product Title -->
+                        <h1 class="detail-title" th:text="${product.name}">Tên sản phẩm</h1>
+
+                        <!-- Price Highlight Box -->
+                        <div class="detail-price-box">
+                            <span class="detail-price-label">Giá niêm yết:</span>
+                            <span class="detail-price-val" 
+                                  th:text="${#numbers.formatDecimal(product.price, 0, 'POINT', 0, 'POINT')} + ' ₫'">
+                                0 ₫
+                            </span>
+                        </div>
+
+                        <!-- Product Description -->
+                        <h2 class="detail-section-label">Mô tả sản phẩm:</h2>
+                        <p class="detail-description" th:text="${product.description}">
+                            Nội dung chi tiết thông số và tính năng nổi bật của sản phẩm.
+                        </p>
+
+                        <!-- Specifications Table -->
+                        <h2 class="detail-section-label">Thông tin chi tiết:</h2>
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <td>Mã sản phẩm (ID):</td>
+                                    <td th:text="'#' + ${product.id}">#1</td>
+                                </tr>
+                                <tr>
+                                    <td>Danh mục hàng:</td>
+                                    <td>
+                                        <a th:if="${category != null}" 
+                                           th:href="@{/products(categoryId=${category.id})}"
+                                           style="color: var(--primary); text-decoration: underline;" 
+                                           th:text="${category.name}">
+                                            Điện thoại di động
+                                        </a>
+                                        <span th:if="${category == null}">Chưa phân loại</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tình trạng:</td>
+                                    <td><span style="color: var(--success); font-weight: 700;">● Còn hàng</span> (Sẵn sàng giao ngay)</td>
+                                </tr>
+                                <tr>
+                                    <td>Bảo hành:</td>
+                                    <td>12 tháng chính hãng toàn quốc (1 đổi 1 trong 30 ngày)</td>
+                                </tr>
+                                <tr>
+                                    <td>Vận chuyển:</td>
+                                    <td>Miễn phí giao hàng tiêu chuẩn trên toàn quốc</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Action Buttons -->
+                        <div class="detail-actions">
+                            <button type="button" class="btn btn-primary btn-large">
+                                🛒 Thêm vào giỏ hàng
+                            </button>
+                            <button type="button" class="btn btn-success btn-large">
+                                ⚡ Mua ngay
+                            </button>
+                            <a th:href="@{/products}" class="btn btn-outline btn-large">
+                                &larr; Quay lại danh sách
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- Case 2: Product Not Found -->
+            <div class="empty-state" th:if="${product == null}">
+                <div class="empty-state-icon">⚠️</div>
+                <h2 th:text="${errorMessage != null ? errorMessage : 'Sản phẩm không tồn tại'}">Không tìm thấy sản phẩm</h2>
+                <p>Mã sản phẩm bạn đang tìm kiếm không tồn tại hoặc đã bị gỡ bỏ khỏi hệ thống.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a th:href="@{/products}" class="btn btn-primary">Quay về danh sách sản phẩm</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand-logo">
+                    <div class="brand-icon">S</div>
+                    <span>SaleAppV1</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a th:href="@{/products}" class="nav-link">Tất cả sản phẩm</a></li>
+                    <li><a th:href="@{/products(categoryId=1)}" class="nav-link">Điện thoại</a></li>
+                    <li><a th:href="@{/products(categoryId=2)}" class="nav-link">Máy tính bảng</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 SaleAppV1. Ứng dụng Bán Hàng Trực Tuyến được phát triển bằng Spring Boot & Thymeleaf.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

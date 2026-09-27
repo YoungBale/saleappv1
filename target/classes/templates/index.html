@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÁN HÀNG TRỰC TUYẾN - SaleAppV1</title>
+    <link rel="stylesheet" th:href="@{/css/style.css(v=2)}">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a th:href="@{/}" class="brand-logo">
+                <div class="brand-icon">S</div>
+                <span>SaleApp</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a th:href="@{/}" class="nav-link active">Trang chủ</a></li>
+                    <li><a th:href="@{/products}" class="nav-link">Tất cả sản phẩm</a></li>
+                    <li><a th:href="@{/products(categoryId=1)}" class="nav-link">Điện thoại di động</a></li>
+                    <li><a th:href="@{/products(categoryId=2)}" class="nav-link">Máy tính bảng</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <span class="hero-badge">CÔNG NGHỆ ĐỈNH CAO 2026</span>
+                <h1 class="hero-title">BÁN HÀNG TRỰC TUYẾN</h1>
+                <p class="hero-subtitle">
+                    Hệ thống cung cấp các thiết bị di động, smartphone và máy tính bảng chính hãng hàng đầu với giá cả cạnh tranh nhất.
+                </p>
+                <div>
+                    <a th:href="@{/products}" class="btn btn-primary btn-large">
+                        Khám phá tất cả sản phẩm &rarr;
+                    </a>
+                </div>
+            </section>
+
+            <!-- Quick Category Access Section -->
+            <section>
+                <h2 class="section-title">Danh mục ngành hàng</h2>
+                <p class="section-subtitle">Lựa chọn danh mục sản phẩm bạn quan tâm để mua sắm ngay</p>
+
+                <div class="category-grid">
+                    <!-- Link: Tất cả sản phẩm -->
+                    <div class="category-card">
+                        <div>
+                            <div class="category-card-icon">📦</div>
+                            <h3>Tất cả</h3>
+                            <p>Toàn bộ danh mục sản phẩm công nghệ đa dạng, đầy đủ mẫu mã mới nhất.</p>
+                        </div>
+                        <a th:href="@{/products}" class="category-card-link">
+                            Xem tất cả <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Link: Điện thoại di động (categoryId = 1) -->
+                    <div class="category-card">
+                        <div>
+                            <div class="category-card-icon">📱</div>
+                            <h3>Điện thoại di động</h3>
+                            <p>Các dòng smartphone flagship từ Apple, Samsung, Xiaomi với hiệu năng vượt trội.</p>
+                        </div>
+                        <a th:href="@{/products(categoryId=1)}" class="category-card-link">
+                            Khám phá Điện thoại <span>&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- Link: Máy tính bảng (categoryId = 2) -->
+                    <div class="category-card">
+                        <div>
+                            <div class="category-card-icon">💻</div>
+                            <h3>Máy tính bảng</h3>
+                            <p>Thiết bị tablet thông minh phục vụ công việc đồ họa, học tập và giải trí đỉnh cao.</p>
+                        </div>
+                        <a th:href="@{/products(categoryId=2)}" class="category-card-link">
+                            Khám phá Máy tính bảng <span>&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features / Value Proposition Section -->
+            <section>
+                <h2 class="section-title">Cam kết dịch vụ</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">🛡️</div>
+                        <div>
+                            <h4>Chính hãng 100%</h4>
+                            <p>Cam kết sản phẩm có nguồn gốc xuất xứ rõ ràng và bảo hành đầy đủ.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🚀</div>
+                        <div>
+                            <h4>Giao hàng siêu tốc</h4>
+                            <p>Nhận hàng nhanh chóng trong 2 giờ tại các thành phố lớn.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🔄</div>
+                        <div>
+                            <h4>Đổi trả linh hoạt</h4>
+                            <p>Hỗ trợ đổi trả miễn phí trong 30 ngày nếu có lỗi kỹ thuật từ nhà sản xuất.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🎧</div>
+                        <div>
+                            <h4>Hỗ trợ tận tâm 24/7</h4>
+                            <p>Đội ngũ chuyên viên tư vấn kỹ thuật chuyên sâu và tận tình.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand-logo">
+                    <div class="brand-icon">S</div>
+                    <span>SaleAppV1</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a th:href="@{/products}" class="nav-link">Tất cả sản phẩm</a></li>
+                    <li><a th:href="@{/products(categoryId=1)}" class="nav-link">Điện thoại</a></li>
+                    <li><a th:href="@{/products(categoryId=2)}" class="nav-link">Máy tính bảng</a></li>
+                </ul>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 SaleAppV1. Ứng dụng Bán Hàng Trực Tuyến được phát triển bằng Spring Boot & Thymeleaf.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

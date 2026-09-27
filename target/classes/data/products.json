@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 17 Pro Max Burgundy 256GB",
+    "description": "Phiên bản màu đỏ rượu vang Burgundy đẳng cấp, khung viền Titanium kết hợp cụm camera ngang (Horizontal Island) đột phá, chip Apple A19 Pro cùng camera 48MP zoom quang học vượt trội.",
+    "price": 34990000.0,
+    "image": "/images/iphone-17-pro-burgundy.png",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24 Ultra 256GB",
+    "description": "Tích hợp quyền năng Galaxy AI vượt trội, màn hình phẳng Dynamic AMOLED 2X 6.8 inch rực rỡ và bút S-Pen đa nhiệm đỉnh cao.",
+    "price": 27490000.0,
+    "image": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&auto=format&fit=crop&q=80",
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "iPhone Fold 512GB (Titanium Trắng)",
+    "description": "Thiết bị màn hình gập đột phá của Apple với cơ chế bản lề giọt nước siêu bền, màn hình linh hoạt Super Retina XDR không nếp gấp và chip xử lý thế hệ mới tối ưu đa nhiệm 2 màn hình.",
+    "price": 49990000.0,
+    "image": "/images/iphone-fold.png",
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy Z Fold8 Ultra 512GB",
+    "description": "Siêu phẩm màn hình gập cao cấp với màn hình trong cực đại 8.0 inch Flex AMOLED 3000 nits, chip Snapdragon 8 Elite Gen 5 for Galaxy, camera 200MP và tích hợp trọn vẹn Galaxy AI thế hệ mới.",
+    "price": 45990000.0,
+    "image": "/images/galaxy-z-fold8-ultra.png",
+    "categoryId": 1
+  },
+  {
+    "id": 5,
+    "name": "iPad Pro M4 11 inch 256GB",
+    "description": "Thiết kế mỏng kỷ lục thế giới, màn hình Ultra Retina XDR công nghệ OLED kép hai lớp và vi xử lý Apple M4 bứt phá sức mạnh AI và đồ họa.",
+    "price": 27990000.0,
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&auto=format&fit=crop&q=80",
+    "categoryId": 2
+  },
+  {
+    "id": 6,
+    "name": "iPad Air 6 M2 11 inch 128GB",
+    "description": "Hiệu năng ấn tượng nhờ chip Apple M2, hỗ trợ bút Apple Pencil Pro và Magic Keyboard mới, đáp ứng trọn vẹn nhu cầu học tập và sáng tạo nội dung.",
+    "price": 16490000.0,
+    "image": "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&auto=format&fit=crop&q=80",
+    "categoryId": 2
+  },
+  {
+    "id": 7,
+    "name": "Samsung Galaxy Tab S9 Ultra 256GB",
+    "description": "Màn hình cực đại 14.6 inch Dynamic AMOLED 2X tần số quét 120Hz, khả năng kháng bụi nước IP68 đầu tiên trên tablet cao cấp, kèm bút S-Pen.",
+    "price": 22990000.0,
+    "image": "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&auto=format&fit=crop&q=80",
+    "categoryId": 2
+  },
+  {
+    "id": 8,
+    "name": "Xiaomi Pad 6S Pro 12.4 inch 256GB",
+    "description": "Màn hình 3K tỷ lệ 3:2 siêu sắc nét 144Hz, sạc siêu tốc HyperCharge 120W cùng hệ điều hành Xiaomi HyperOS tối ưu cho trải nghiệm đa nhiệm.",
+    "price": 12990000.0,
+    "image": "https://images.unsplash.com/photo-1527698266440-12104e498b76?w=600&auto=format&fit=crop&q=80",
+    "categoryId": 2
+  }
+]
